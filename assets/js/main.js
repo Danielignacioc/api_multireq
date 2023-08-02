@@ -1,4 +1,4 @@
-const htmlSectUsr = document.getElementsByClassName("usuarios");
+const htmlSectUsr = document.querySelector(".usuarios");
 const endpoint = "https://jsonplaceholder.typicode.com/users";
 
 async function JSONPlaceholder() {
@@ -26,13 +26,13 @@ async function render() {
     usrs.forEach((usr) => {
       plantilla += `
       <div class="usuarios">
-      <h3>${usr.id}</h3><br>
-      <h3>${usr.name}</h3><br>
-      <h3>${usr.username}</h3>
+        <h3>${usr.id}</h3><br>
+        <h3>${usr.name}</h3><br>
+        <h3>${usr.username}</h3>
       </div>
       `;
     });
-    htmlSectUsr.innerHTML = plantilla;
+    document.querySelector(".usuarios").innerHTML = plantilla;
   }
-  
+
   render();
